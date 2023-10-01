@@ -15,7 +15,7 @@ def get_spotify_current_song(sp, username):
     release_date = results['item']['album']['release_date'][0:4]
 
     print(
-        f"{username} is currently listening to:\n{artist_name} - {song_name}\n({album_name}, {release_date})\n\n\n")
+        f"{username} is currently listening to:\n\n{artist_name} - {song_name}\n({album_name}, {release_date})\n")
 
 
 def setup_credentials(credentials):
@@ -39,7 +39,7 @@ def setup_credentials(credentials):
 
 
 def get_credentials(credentials):
-    filename = "N:\Code Repositories\Spotify Tracker\Files\credentials.txt"
+    filename = "N:\Code Repositories\Spotify Tracker Repo\Spotify Tracker\Files\credentials.txt"
     with open(filename, "r") as file:
         lines = file.readlines()
 
@@ -66,6 +66,9 @@ def main():
 
     # get current song playing on Spotify
     get_spotify_current_song(sp, credentials["username"])
+
+    # keep the terminal from closing
+    keep_open = input("")
 
 
 if __name__ == "__main__":
