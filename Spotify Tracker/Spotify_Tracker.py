@@ -2,6 +2,9 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy.util as util
 
+from pathlib import Path
+import os
+
 # Authorization Code Flow: Enter your credentials below.
 
 
@@ -39,7 +42,10 @@ def setup_credentials(credentials):
 
 
 def get_credentials(credentials):
-    filename = "N:\Code Repositories\Spotify Tracker Repo\Spotify Tracker\Files\credentials.txt"
+
+    filepath = Path.cwd()
+    filename = f"{filepath}\Files\credentials.txt"
+
     with open(filename, "r") as file:
         lines = file.readlines()
 
