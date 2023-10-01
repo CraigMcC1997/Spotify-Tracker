@@ -3,7 +3,6 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy.util as util
 
 from pathlib import Path
-import os
 
 # Authorization Code Flow: Enter your credentials below.
 
